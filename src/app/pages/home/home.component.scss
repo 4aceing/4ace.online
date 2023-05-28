@@ -1,0 +1,96 @@
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: min(15dvw, 7rem);
+  font-weight: 800;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+}
+
+span[class*="gradient"] {
+  background-image: linear-gradient(180deg, #fff, hsla(0, 0%, 100%, 0.75));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+
+  &::before {
+    content: var(--content);
+  }
+
+  span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.gradient-1 {
+  --content: "4";
+
+  span {
+    background-image: linear-gradient(90deg, #00F260, #0575E6);
+    animation: gradient-1 3s infinite;
+  }
+}
+
+.gradient-2 {
+  --content: "ace";
+
+  span {
+    background-image: linear-gradient(90deg, #f12711, #f5af19);
+    animation: gradient-2 3s infinite;
+  }
+}
+
+.gradient-3 {
+  --content: "online";
+
+  span {
+    background-image: linear-gradient(90deg, #8E2DE2, #4A00E0);
+    animation: gradient-3 3s infinite;
+  }
+}
+
+@keyframes gradient-1 {
+  0%,
+  16.667%,
+  100% {
+    opacity: 1;
+  }
+  33.333%,
+  83.333% {
+    opacity: 0;
+  }
+}
+
+@keyframes gradient-2 {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  33.333%,
+  50% {
+    opacity: 1;
+  }
+  16.667%,
+  66.667% {
+    opacity: 0;
+  }
+}
+
+@keyframes gradient-3 {
+  0%,
+  50%,
+  100% {
+    opacity: 0;
+  }
+  66.667%,
+  83.333% {
+    opacity: 1;
+  }
+}
